@@ -7,8 +7,8 @@ math.randomseed(89890)
 function prediccion(t)
   t.learning_rate = t.learning_rate or 50 -- un número entre 1 y 100
   t.intentos      = t.intentos or 100000 -- intentos de backpropagation
-  t.threshold     = t.threshold or 1 -- curavtura de la función (sigmoide)
-  t.modelo        = t.modelo or {1,4,8,4,2}
+  t.threshold     = t.threshold or 1 -- curvatura de la función (sigmoide)
+  t.modelo        = t.modelo or {1,4,8,4,2} -- red
   
 -- Estructura de la red:
 --[[
