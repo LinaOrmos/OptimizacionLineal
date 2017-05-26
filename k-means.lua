@@ -104,6 +104,16 @@ cluster_4.centroid = centroide_4
 
 -- funcion para asignar vectores a cada cluster
 
-local function asig_cluster()
-  
+local function asig_cluster(vec)
+  local distancias = {
+    vec:euclid(cluster_1.centroid),
+    vec:euclid(cluster_2.centroid),
+    vec:euclid(cluster_3.centroid),
+    vec:euclid(cluster_4.centroid)
+  }
+  local min = _.min(distancias)
+  local res = _.find(distancias, min)
+  print(res)
 end
+
+asig_cluster(particion_1[1])
