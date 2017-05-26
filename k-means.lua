@@ -87,15 +87,12 @@ local centroide_4 = centroid(particion_4)
 
 -- Clustering
 
-local cluster_1 = {}
-local cluster_2 = {}
-local cluster_3 = {}
-local cluster_4 = {}
+local cluster = { {}, {}, {}, {} }
 
-cluster_1.centroid = centroide_1
-cluster_2.centroid = centroide_2
-cluster_3.centroid = centroide_3
-cluster_4.centroid = centroide_4
+cluster[1].centroid = centroide_1
+cluster[2].centroid = centroide_2
+cluster[3].centroid = centroide_3
+cluster[4].centroid = centroide_4
 
 -- Calculamos la distancia euclidiana entre cada vector y el centroide
 -- y asignamos cada uno a su cluster más cercano.
@@ -106,14 +103,14 @@ cluster_4.centroid = centroide_4
 
 local function asig_cluster(vec)
   local distancias = {
-    vec:euclid(cluster_1.centroid),
-    vec:euclid(cluster_2.centroid),
-    vec:euclid(cluster_3.centroid),
-    vec:euclid(cluster_4.centroid)
+    vec:euclid(cluster[1].centroid),
+    vec:euclid(cluster[2].centroid),
+    vec:euclid(cluster[3].centroid),
+    vec:euclid(cluster[4].centroid)
   }
   local min = _.min(distancias)
   local res = _.find(distancias, min)
-  print(res)
+  table.insert(cluster[res], vec)
 end
 
 asig_cluster(particion_1[1])
