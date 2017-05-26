@@ -262,7 +262,9 @@ for l = 1, #cluster_nuevo[3] do print(cluster_nuevo[3][l].tag) end
 print"horario 4"
 for l = 1, #cluster_nuevo[4] do print(cluster_nuevo[4][l].tag) end
 
--- Resultados definitvos del clustering:
+-- Resultados de la primera reasignación del clustering:
+-- Para asignar agentes a cada turno se usará el modelo de redes neuronales para determinar
+-- el mínimo de agentes en cada horario.
 --[[
 
 Horario 1 - 8:00 - 11:00
