@@ -219,5 +219,5 @@ for l = 1, #cluster[4] do print(cluster[4][l].tag) end
 
 ---------------------------------------------------------------------
 
--- Se vuelve a calucular la distancia euclidiana
+-- Se vuelve a calcular la distancia euclidiana
 
