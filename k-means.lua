@@ -136,3 +136,11 @@ end
 for c = 1, #cluster do
   print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
 end
+
+-- Horarios del cluster #1
+
+print"Horarios del cluster #1:"
+
+for l = 1, #cluster[1] do
+  print(cluster[1][l].tag)
+end
