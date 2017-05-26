@@ -41,7 +41,7 @@ local particion_1 = {
 
 local centroide_1 = centroid(particion_1)
 
-print(centroide_1.p1, centroide_1.p2, centroide_1.tag) -- Comprobamos qué centroide es
+--print(centroide_1.p1, centroide_1.p2, centroide_1.tag) -- Comprobamos qué centroide es
 
 local particion_2 = {
   Vec2.new(8, 6, "11:30 - 12:00"),   -- 11:30 - 12:00
@@ -55,7 +55,7 @@ local particion_2 = {
 
 local centroide_2 = centroid(particion_2)
 
-print(centroide_2.p1, centroide_2.p2, centroide_2.tag)
+--print(centroide_2.p1, centroide_2.p2, centroide_2.tag)
 
 local particion_3 = {
   Vec2.new(15, 6, "15:00 - 15:30"), -- 15:00 - 15:30
@@ -69,7 +69,7 @@ local particion_3 = {
 
 local centroide_3 = centroid(particion_3)
 
-print(centroide_3.p1, centroide_3.p2, centroide_3.tag)
+--print(centroide_3.p1, centroide_3.p2, centroide_3.tag)
 
 local particion_4 = {
   Vec2.new(22, 5, "18:30 - 19:00"), -- 18:30 - 19:00
@@ -83,4 +83,27 @@ local particion_4 = {
 
 local centroide_4 = centroid(particion_4)
 
-print(centroide_4.p1, centroide_4.p2, centroide_4.tag)
+--print(centroide_4.p1, centroide_4.p2, centroide_4.tag)
+
+-- Clustering
+
+local cluster_1 = {}
+local cluster_2 = {}
+local cluster_3 = {}
+local cluster_4 = {}
+
+cluster_1.centroid = centroide_1
+cluster_2.centroid = centroide_2
+cluster_3.centroid = centroide_3
+cluster_4.centroid = centroide_4
+
+-- Calculamos la distancia euclidiana entre cada vector y el centroide
+-- y asignamos cada uno a su cluster más cercano.
+
+-- Iniciamos con la primera partición
+
+-- funcion para asignar vectores a cada cluster
+
+local function asig_cluster()
+  
+end
