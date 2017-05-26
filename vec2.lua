@@ -10,10 +10,11 @@ function Vec2.mean(...)
   return acc / #t
 end
 
-function Vec2.new(p1, p2)
+function Vec2.new(p1, p2, tag)
   local self = {
     p1 = p1,
-    p2 = p2
+    p2 = p2,
+    tag = tag
   }
   self.val = p1 + p2
   setmetatable(self, mt)
