@@ -50,9 +50,37 @@ local particion_2 = {
   Vec2.new(11, 7, "13:00 - 13:30"),  -- 13:00 - 13:30
   Vec2.new(12, 8, "13:30 - 14:00"),  -- 13:30 - 14:00
   Vec2.new(13, 11, "14:00 - 14:30"), -- 14:00 - 14:30
-  Vec2.new(14, 7, "14:30 - 15:30"),  -- 14:30 - 15:30 
+  Vec2.new(14, 7, "14:30 - 15:30"),  -- 14:30 - 15:00 
 }
 
 local centroide_2 = centroid(particion_2)
 
 print(centroide_2.p1, centroide_2.p2, centroide_2.tag)
+
+local particion_3 = {
+  Vec2.new(15, 6, "15:00 - 15:30"), -- 15:00 - 15:30
+  Vec2.new(16, 7, "15:30 - 16:00"), -- 15:30 - 16:00
+  Vec2.new(17, 7, "16:00 - 16:30"), -- 16:00 - 16:30
+  Vec2.new(18, 8, "16:30 - 17:00"), -- 16:30 - 17:00
+  Vec2.new(19, 6, "17:00 - 17:30"), -- 17:00 - 17:30
+  Vec2.new(20, 5, "17:30 - 18:00"), -- 17:30 - 18:00
+  Vec2.new(21, 6, "18:00 - 18:30"), -- 18:00 - 18:30
+}
+
+local centroide_3 = centroid(particion_3)
+
+print(centroide_3.p1, centroide_3.p2, centroide_3.tag)
+
+local particion_4 = {
+  Vec2.new(22, 5, "18:30 - 19:00"), -- 18:30 - 19:00
+  Vec2.new(23, 4, "19:00 - 19:30"), -- 19:00 - 19:30
+  Vec2.new(24, 5, "19:30 - 20:00"), -- 19:30 - 20:00
+  Vec2.new(25, 1, "20:00 - 20:30"), -- 20:00 - 20:30
+  Vec2.new(26, 2, "20:30 - 21:00"), -- 20:30 - 21:00
+  Vec2.new(27, 1, "21:00 - 21:30"), -- 21:00 - 21:30
+  Vec2.new(28, 2, "21:30 - 22:00"), -- 21:30 - 22:00
+}
+
+local centroide_4 = centroid(particion_4)
+
+print(centroide_4.p1, centroide_4.p2, centroide_4.tag)
