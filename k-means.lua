@@ -50,7 +50,7 @@ local particion_2 = {
   Vec2.new(11, 7, "13:00 - 13:30"),  -- 13:00 - 13:30
   Vec2.new(12, 8, "13:30 - 14:00"),  -- 13:30 - 14:00
   Vec2.new(13, 11, "14:00 - 14:30"), -- 14:00 - 14:30
-  Vec2.new(14, 7, "14:30 - 15:30"),  -- 14:30 - 15:00 
+  Vec2.new(14, 7, "14:30 - 15:00"),  -- 14:30 - 15:00 
 }
 
 local centroide_2 = centroid(particion_2)
@@ -127,7 +127,9 @@ local function asignar_cluster(vec)
   cluster[pos].centroid = Vec2.new(punto1, punto2)
 end
 
+---
 -- Iniciamos con la primera partición
+---
 
 for p = 1, #particion_1 do asignar_cluster(particion_1[p]) end
 
@@ -138,7 +140,6 @@ end
 -- Horarios del cluster #1
 
 print"Horarios del cluster #1:"
-
 for l = 1, #cluster[1] do print(cluster[1][l].tag) end
 
 ---
@@ -160,3 +161,63 @@ for l = 1, #cluster[1] do print(cluster[1][l].tag) end
 
 print"Horarios del cluster #2:"
 for l = 1, #cluster[2] do print(cluster[2][l].tag) end
+
+---
+-- Tercera partición
+---
+
+for p = 1, #particion_3 do asignar_cluster(particion_3[p]) end
+
+for c = 1, #cluster do
+  print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
+end
+
+-- Horarios del cluster #1
+
+print"Horarios del cluster #1:"
+for l = 1, #cluster[1] do print(cluster[1][l].tag) end
+
+-- Horarios del cluster #2
+
+print"Horarios del cluster #2:"
+for l = 1, #cluster[2] do print(cluster[2][l].tag) end
+
+-- Horarios del cluster #3
+
+print"Horarios del cluster #3:"
+for l = 1, #cluster[3] do print(cluster[3][l].tag) end
+
+---
+-- Cuarta partición
+---
+
+for p = 1, #particion_4 do asignar_cluster(particion_4[p]) end
+
+for c = 1, #cluster do
+  print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
+end
+
+-- Horarios del cluster #1
+
+print"Horarios del cluster #1:"
+for l = 1, #cluster[1] do print(cluster[1][l].tag) end
+
+-- Horarios del cluster #2
+
+print"Horarios del cluster #2:"
+for l = 1, #cluster[2] do print(cluster[2][l].tag) end
+
+-- Horarios del cluster #3
+
+print"Horarios del cluster #3:"
+for l = 1, #cluster[3] do print(cluster[3][l].tag) end
+
+-- Horarios del cluster #4
+
+print"Horarios del cluster #4:"
+for l = 1, #cluster[4] do print(cluster[4][l].tag) end
+
+---------------------------------------------------------------------
+
+-- Se vuelve a calucular la distancia euclidiana
+
