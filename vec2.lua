@@ -25,3 +25,5 @@ function Vec2:euclid(vec)
   local dist = math.sqrt(math.pow(self.p1 - vec.p1, 2) + math.pow(self.p2 - vec.p2, 2))
   return dist
 end
+
+return Vec2
