@@ -129,9 +129,7 @@ end
 
 -- Iniciamos con la primera partición
 
-for p = 1, #particion_1 do
-  asignar_cluster(particion_1[p])
-end
+for p = 1, #particion_1 do asignar_cluster(particion_1[p]) end
 
 for c = 1, #cluster do
   print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
@@ -141,6 +139,24 @@ end
 
 print"Horarios del cluster #1:"
 
-for l = 1, #cluster[1] do
-  print(cluster[1][l].tag)
+for l = 1, #cluster[1] do print(cluster[1][l].tag) end
+
+---
+-- Continuamos con la segunda particion
+---
+
+for p = 1, #particion_2 do asignar_cluster(particion_2[p]) end
+
+for c = 1, #cluster do
+  print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
 end
+
+-- Horarios del cluster #1
+
+print"Horarios del cluster #1:"
+for l = 1, #cluster[1] do print(cluster[1][l].tag) end
+
+-- Horarios del cluster #2
+
+print"Horarios del cluster #2:"
+for l = 1, #cluster[2] do print(cluster[2][l].tag) end
