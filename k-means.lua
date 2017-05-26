@@ -4,7 +4,7 @@ local _    = require"moses" -- Llamámos al módulo de manejo de tablas https://
 -- Seleccionar centroides
 
 --[[
-Los centroides serán los vectores más grandes en una partición equitativa.
+Los centroides serán los vectores con más erlangs en una partición equitativa.
 
 Cada media hora se vectorizará del siguiente modo:
 
@@ -20,7 +20,7 @@ En este caso haremos una partición equitativa de 4 turnos con 7 intervalos de m
 local function centroid(clust)
   local vals = {}
   for i = 1, #clust do
-    vals[i] = clust[i].val
+    vals[i] = clust[i].p2
   end
   local max = _.max(vals)
   local pos = _.find(vals, max)
@@ -219,5 +219,45 @@ for l = 1, #cluster[4] do print(cluster[4][l].tag) end
 
 ---------------------------------------------------------------------
 
--- Se vuelve a calcular la distancia euclidiana
+-- Se vuelve a calcular la distancia euclidiana de cada vector respecto al nuevo centroide de cada cluster
+-- Con el nuevo cálculo se reasignan los horarios
 
+local cluster_nuevo = { {}, {}, {}, {} }
+
+local function recalc(vec)
+  local distancias = {
+    vec:euclid(cluster[1].centroid),
+    vec:euclid(cluster[2].centroid),
+    vec:euclid(cluster[3].centroid),
+    vec:euclid(cluster[4].centroid)
+  }
+  local min = _.min(distancias)
+  local pos = _.find(distancias, min)
+  table.insert(cluster_nuevo[pos], vec)
+end
+
+
+for p = 1, #particion_1 do 
+  recalc(particion_1[p])
+end
+
+for p = 1, #particion_2 do 
+  recalc(particion_2[p])
+end
+
+for p = 1, #particion_3 do 
+  recalc(particion_3[p])
+end
+
+for p = 1, #particion_4 do 
+  recalc(particion_4[p])
+end
+
+print"horario 1"
+for l = 1, #cluster_nuevo[1] do print(cluster_nuevo[1][l].tag) end
+print"horario 2"
+for l = 1, #cluster_nuevo[2] do print(cluster_nuevo[2][l].tag) end
+print"horario 3"
+for l = 1, #cluster_nuevo[3] do print(cluster_nuevo[3][l].tag) end
+print"horario 4"
+for l = 1, #cluster_nuevo[4] do print(cluster_nuevo[4][l].tag) end
