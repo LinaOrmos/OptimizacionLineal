@@ -97,20 +97,42 @@ cluster[4].centroid = centroide_4
 -- Calculamos la distancia euclidiana entre cada vector y el centroide
 -- y asignamos cada uno a su cluster más cercano.
 
--- Iniciamos con la primera partición
 
--- funcion para asignar vectores a cada cluster
+-- funcion para asignar vectores a cada cluster y re-cálculo del centroide
 
-local function asig_cluster(vec)
+local function asignar_cluster(vec)
   local distancias = {
     vec:euclid(cluster[1].centroid),
     vec:euclid(cluster[2].centroid),
     vec:euclid(cluster[3].centroid),
     vec:euclid(cluster[4].centroid)
   }
+  
   local min = _.min(distancias)
-  local res = _.find(distancias, min)
-  table.insert(cluster[res], vec)
+  local pos = _.find(distancias, min)
+  
+  table.insert(cluster[pos], vec)
+  
+  local punto1 = 0
+  local punto2 = 0
+  
+  for i = 1, #cluster[pos] do
+    punto1 = punto1 + cluster[pos][i].p1
+    punto2 = punto2 + cluster[pos][i].p2
+  end
+  
+  punto1 = punto1 / #cluster[pos]
+  punto2 = punto2 / #cluster[pos]
+  
+  cluster[pos].centroid = Vec2.new(punto1, punto2)
 end
 
-asig_cluster(particion_1[1])
+-- Iniciamos con la primera partición
+
+for p = 1, #particion_1 do
+  asignar_cluster(particion_1[p])
+end
+
+for c = 1, #cluster do
+  print("Centroide del cluster #"..c, cluster[c].centroid.p1, cluster[c].centroid.p2)
+end
