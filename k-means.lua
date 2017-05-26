@@ -1,5 +1,5 @@
-local Vec2 = require"vec2" -- Llamámos al módulo de vectores
-local _ = require"moses"   -- Llamámos al módulo de manejo de tablas https://github.com/Yonaba/Moses
+local Vec2 = require"vec2"  -- Llamámos al módulo de vectores
+local _    = require"moses" -- Llamámos al módulo de manejo de tablas https://github.com/Yonaba/Moses
 
 -- Seleccionar centroides
 
