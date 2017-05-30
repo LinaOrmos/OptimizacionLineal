@@ -30,13 +30,13 @@ end
 -- Creamos una tabla de vectores por partición.
 
 local particion_1 = {
-  Vec2.new(1, 0, "8:00 - 8:30"),   -- 8:00 - 8:30
-  Vec2.new(2, 0, "8:30 - 9:00"),   -- 8:30 - 9:00
-  Vec2.new(3, 1, "9:00 - 9:30"),   -- 9:00 - 9:30
-  Vec2.new(4, 2, "9:30 - 10:00"),  -- 9:30 - 10:00
-  Vec2.new(5, 4, "10:00 - 10:30"), -- 10:00 - 10:30
-  Vec2.new(6, 4, "10:30 - 11:00"), -- 10:30 - 11:00
-  Vec2.new(7, 7, "11:00 - 11:30"), -- 11:00 - 11:30 
+  Vec2.new(1, 167, "9:00 - 9:30"),      -- 9:00 - 9:30
+  Vec2.new(2, 173, "9:30 - 10:00"),     -- 9:30 - 10:00
+  Vec2.new(3, 179, "10:00 - 10:30"),    -- 10:00 - 10:30
+  Vec2.new(4, 172, "10:30 - 11:00"),    -- 10:30 - 11:00
+  Vec2.new(5, 147, "11:00 - 11:30"),    -- 11:00 - 11:30
+  Vec2.new(6, 156, "11:30 - 12:00"),    -- 11:30 - 12:00
+  Vec2.new(7, 138, "12:00 - 12:30"),    -- 12:00 - 12:30 
 }
 
 local centroide_1 = centroid(particion_1)
@@ -44,13 +44,13 @@ local centroide_1 = centroid(particion_1)
 --print(centroide_1.p1, centroide_1.p2, centroide_1.tag) -- Comprobamos qué centroide es
 
 local particion_2 = {
-  Vec2.new(8, 6, "11:30 - 12:00"),   -- 11:30 - 12:00
-  Vec2.new(9, 7, "12:00 - 12:30"),   -- 12:00 - 12:30
-  Vec2.new(10, 7, "12:30 - 13:00"),  -- 12:30 - 13:00
-  Vec2.new(11, 7, "13:00 - 13:30"),  -- 13:00 - 13:30
-  Vec2.new(12, 8, "13:30 - 14:00"),  -- 13:30 - 14:00
-  Vec2.new(13, 11, "14:00 - 14:30"), -- 14:00 - 14:30
-  Vec2.new(14, 7, "14:30 - 15:00"),  -- 14:30 - 15:00 
+  Vec2.new(8, 140, "12:30 - 13:00"),   -- 12:30 - 13:00
+  Vec2.new(9, 114, "13:00 - 13:30"),   -- 13:00 - 13:30
+  Vec2.new(10, 117, "13:30 - 14:00"),  -- 13:30 - 14:00
+  Vec2.new(11, 110, "14:00 - 14:30"),  -- 14:00 - 14:30
+  Vec2.new(12, 110, "14:30 - 15:00"),  -- 14:30 - 15:00
+  Vec2.new(13, 95, "15:00 - 15:30"),   -- 15:00 - 15:30
+  Vec2.new(14, 104, "15:30 - 16:00"),  -- 15:30 - 16:00
 }
 
 local centroide_2 = centroid(particion_2)
@@ -58,13 +58,13 @@ local centroide_2 = centroid(particion_2)
 --print(centroide_2.p1, centroide_2.p2, centroide_2.tag)
 
 local particion_3 = {
-  Vec2.new(15, 6, "15:00 - 15:30"), -- 15:00 - 15:30
-  Vec2.new(16, 7, "15:30 - 16:00"), -- 15:30 - 16:00
-  Vec2.new(17, 7, "16:00 - 16:30"), -- 16:00 - 16:30
-  Vec2.new(18, 8, "16:30 - 17:00"), -- 16:30 - 17:00
-  Vec2.new(19, 6, "17:00 - 17:30"), -- 17:00 - 17:30
-  Vec2.new(20, 5, "17:30 - 18:00"), -- 17:30 - 18:00
-  Vec2.new(21, 6, "18:00 - 18:30"), -- 18:00 - 18:30
+  Vec2.new(15, 105, "16:00 - 16:30"), -- 15:00 - 15:30
+  Vec2.new(16, 98, "16:30 - 17:00"),  -- 16:30 - 17:00
+  Vec2.new(17, 101, "17:00 - 17:30"), -- 17:00 - 17:30
+  Vec2.new(18, 101, "17:30 - 18:00"), -- 17:30 - 18:00
+  Vec2.new(19, 87, "18:00 - 18:30"),  -- 18:00 - 18:30
+  Vec2.new(20, 91, "18:30 - 19:00"),  -- 18:30 - 19:00
+  Vec2.new(21, 48, "19:00 - 19:30"),  -- 19:00 - 19:30
 }
 
 local centroide_3 = centroid(particion_3)
@@ -72,13 +72,11 @@ local centroide_3 = centroid(particion_3)
 --print(centroide_3.p1, centroide_3.p2, centroide_3.tag)
 
 local particion_4 = {
-  Vec2.new(22, 5, "18:30 - 19:00"), -- 18:30 - 19:00
-  Vec2.new(23, 4, "19:00 - 19:30"), -- 19:00 - 19:30
-  Vec2.new(24, 5, "19:30 - 20:00"), -- 19:30 - 20:00
-  Vec2.new(25, 1, "20:00 - 20:30"), -- 20:00 - 20:30
-  Vec2.new(26, 2, "20:30 - 21:00"), -- 20:30 - 21:00
-  Vec2.new(27, 1, "21:00 - 21:30"), -- 21:00 - 21:30
-  Vec2.new(28, 2, "21:30 - 22:00"), -- 21:30 - 22:00
+  Vec2.new(22, 64, "19:30 - 20:00"), -- 19:30 - 20:00
+  Vec2.new(23, 5, "20:00 - 20:30"),  -- 20:00 - 20:30
+  Vec2.new(24, 7, "20:30 - 21:00"),  -- 20:30 - 21:00
+  Vec2.new(25, 2, "21:00 - 21:30"),  -- 21:00 - 21:30
+  Vec2.new(26, 2, "21:30 - 22:00"),  -- 21:30 - 22:00
 }
 
 local centroide_4 = centroid(particion_4)
@@ -253,54 +251,13 @@ for p = 1, #particion_4 do
   recalc(particion_4[p])
 end
 
-print"horario 1"
+print"Horario 1"
 for l = 1, #cluster_nuevo[1] do print(cluster_nuevo[1][l].tag) end
-print"horario 2"
+print"Horario 2"
 for l = 1, #cluster_nuevo[2] do print(cluster_nuevo[2][l].tag) end
-print"horario 3"
+print"Horario 3"
 for l = 1, #cluster_nuevo[3] do print(cluster_nuevo[3][l].tag) end
-print"horario 4"
+print"Horario 4"
 for l = 1, #cluster_nuevo[4] do print(cluster_nuevo[4][l].tag) end
 
--- Resultados de la primera reasignación del clustering:
--- Para asignar agentes a cada turno se usará el modelo de redes neuronales para determinar
--- el mínimo de agentes en cada horario.
---[[
 
-Horario 1 - 8:00 - 11:00
-8:00 - 8:30
-8:30 - 9:00
-9:00 - 9:30
-9:30 - 10:00
-10:00 - 10:30
-10:30 - 11:00
-
-Horario 2 - 11:00 - 15:00
-11:00 - 11:30
-11:30 - 12:00
-12:00 - 12:30
-12:30 - 13:00
-13:00 - 13:30
-13:30 - 14:00
-14:00 - 14:30
-14:30 - 15:00
-
-Horario 3 - 15:00 - 18:00
-15:00 - 15:30
-15:30 - 16:00
-16:00 - 16:30
-16:30 - 17:00
-17:00 - 17:30
-17:30 - 18:00
-
-Horario 4 - 18:00 - 22:00
-18:00 - 18:30
-18:30 - 19:00
-19:00 - 19:30
-19:30 - 20:00
-20:00 - 20:30
-20:30 - 21:00
-21:00 - 21:30
-21:30 - 22:00
-
---]]
